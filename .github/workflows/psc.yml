@@ -11,16 +11,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Install Curl
-        run: sudo apt-get install -y curl
-        
-      - name: Download file from Github
-        run: | 
-         FILE_URL="https://github.com/amarend/psc_phase1/blame/main/7z1900-x64.exe"
-         curl -L -o download_file.exe $FILE_URL
-        env: 
-         TOKEN_GIT: ${{ secrets.TOKEN_GIT }}
         
       - name: PSC Upload file
         run: | 
-          curl -X POST --header 'authorization: Bearer ${{ secrets.API_TOKEN }}' --header 'Group: ${{ secrets.GROUP_ID }}' -T 'file=@download_file.exe' 'https://protecode-sc.com/api/upload/'
+          curl -X POST --header 'authorization: Bearer ${{ secrets.API_TOKEN }}' --header 'Group: ${{ secrets.GROUP_ID }}' --header 'Url: https://github.com/amarend/psc_phase1/blame/main/7z1900-x64.exe' 'https://protecode-sc.com/api/fetch'
+        env: 
+         TOKEN_GIT: ${{ secrets.TOKEN_GIT }}
