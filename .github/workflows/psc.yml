@@ -1,4 +1,4 @@
-name: psc-action
+name: psc-action-new
 on:
   push:
     branches: [ main, master, develop, stage, release ]
@@ -9,9 +9,9 @@ jobs:
   build:
     runs-on: [ ubuntu-latest ]
     steps:
-      - name: PSC get Vuln
+      - name: PSC Upload files
         run: | 
-          curl --header 'authorization: Bearer ${{ secrets.API_TOKEN }}' --header "Group: 18725" -T 7z1900-x64.exe\ 
+          curl --header 'authorization: Bearer ${{ secrets.API_TOKEN }}' --header 'Group: ${{ secrets.GROUP_ID }}' -T 7z1900-x64.exe\ 
           'https://protecode-sc.com/api/upload/'
 		  
 		  
