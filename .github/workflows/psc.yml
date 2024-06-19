@@ -16,7 +16,7 @@ jobs:
          FILE_URL = "https://github.com/amarend/psc_phase1/blob/main/7z1900-x64.exe"
          curl -L -o download_file.exe $FILE_URL
         env: 
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.TOKEN_GIT }}
         
       - name: PSC Upload file
         run: | 
