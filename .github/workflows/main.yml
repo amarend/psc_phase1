@@ -1,0 +1,19 @@
+name: psc-action
+on:
+  push:
+    branches: [ main, master, develop, stage, release ]
+  pull_request:
+    branches: [ main, master, develop, stage, release ]
+  workflow_dispatch:  
+jobs:
+  build:
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - name: PSC get Vuln
+        run: | 
+          curl --header 'authorization: Bearer ${{ secrets.API_TOKEN }}' --header "Group: 18725" -T 7z1900-x64.exe\ 
+          'https://protecode-sc.com/api/upload/'
+		  
+		  
+		  
+		 
