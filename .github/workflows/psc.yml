@@ -14,4 +14,4 @@ jobs:
         
       - name: PSC Upload file
         run: | 
-          curl --header 'authorization: Bearer ${{ secrets.API_TOKEN }}' --header 'Group: ${{ secrets.GROUP_ID }}' -T 'file=@7z1900-x64.exe' 'https://protecode-sc.com/api/upload/'
+          curl --header 'authorization: Bearer ${{ secrets.API_TOKEN }}' --header 'Group: ${{ secrets.GROUP_ID }}' --header 'Url: https://github.com/amarend/psc_phase1/blob/main/7z1900-x64.exe' 'https://protecode-sc.com/api/upload/'
