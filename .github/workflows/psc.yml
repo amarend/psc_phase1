@@ -13,7 +13,3 @@ jobs:
         run: | 
           curl --header 'authorization: Bearer ${{ secrets.API_TOKEN }}' --header 'Group: ${{ secrets.GROUP_ID }}' -T 7z1900-x64.exe\ 
           'https://protecode-sc.com/api/upload/'
-		  
-		  
-		  
-		 
