@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+      - name: Install Curl
+        run: sudo apt-get install -y curl
+        
       - name: Download file from Github
         run: | 
          FILE_URL = "https://github.com/amarend/psc_phase1/blob/main/7z1900-x64.exe"
