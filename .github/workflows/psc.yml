@@ -23,4 +23,4 @@ jobs:
         
       - name: PSC Upload file
         run: | 
-          curl -X POST --header 'authorization: Bearer ${{ secrets.API_TOKEN }}' --header 'Group: ${{ secrets.GROUP_ID }}' -F 'file=@download_file.exe' 'https://protecode-sc.com/api/upload/'
+          curl -X POST --header 'authorization: Bearer ${{ secrets.API_TOKEN }}' --header 'Group: ${{ secrets.GROUP_ID }}' -T 'file=@download_file.exe' 'https://protecode-sc.com/api/upload/'
